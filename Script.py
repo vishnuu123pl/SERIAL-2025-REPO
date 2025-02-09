@@ -315,31 +315,28 @@ User - {}"""
 </blockquote></b>"""
     
     GROUP_TEXT = """<b><blockquote>
- --------------Set Verify-------------
+-------------Set Verify-------------
 /set_verify {{website link}} {{website api}}
 /set_verify_2 {{website link}} {{website api}}
 /set_verify_3 {{website link}} {{website api}}
--------------Set Verify Time-----------
-/set_time_2 {{seconds}} Sᴇᴛ ᴛʜᴇ sᴇᴄᴏɴᴅ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
-/set_time_3 {{seconds}} Sᴇᴛ ᴛʜᴇ ᴛʜɪʀᴅ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴛɪᴍᴇ
---------------Verify On Off------------
-/verifyoff {{verify.off code}} - off verification <a href="https://t.me/CharlieWatson1">Cᴏɴᴛᴀᴄᴛ</a> ᴛʜᴇ ʙᴏᴛ ᴀᴅᴍɪɴ ғᴏʀ ᴀ ᴠᴇʀɪғʏ.ᴏғғ ᴄᴏᴅᴇ
-/verifyon - on verification 
-------------Set File Caption-----------
-/set_caption - set coustom file caption 
------------Set Imdb Template-----------
-/set_template - set IMDb template <a href="https://t.me/Jisshu_developer/8">Example</a>
---------------Set Tutorial-------------
-/set_tutorial - set 1 verification tutorial 
--------------Set Log Channel-----------
---> ᴀᴅᴅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ & ᴍᴀᴋᴇ sᴜʀᴇ ʙᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ 👇
-
-/set_log {{log channel id}}
----------------------------------------
-ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀʟʟ ᴅᴇᴛᴀɪʟs 
-ʙʏ /details ᴄᴏᴍᴍᴀɴᴅ
+------------Set Verify Time-----------
+/set_time_2 {{seconds}} - Set second verification time
+/set_time_3 {{seconds}} - Set third verification time
+------------Verify On/Off------------
+/verifyoff {{verify.off code}} - Off verification 
+/verifyon - On verification 
+------------File Caption------------
+/set_caption - Set custom file caption 
+------------IMDb Template------------
+/set_template - Set IMDb template <a href="https://t.me/Jisshu_developer/8">Example</a>
+------------Set Tutorial------------
+/set_tutorial - Set verification tutorial 
+------------Log Channel------------
+/set_log {{log channel id}} - Add log channel (Bot must be admin)
+-----------------------------------
+Check details with /details command
 </blockquote>
-Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ᴀɴᴅ ᴜsᴇ ᴀʟʟ ғᴇᴀᴛᴜʀᴇs😇</b>"""
+Add me to your group, make me admin, and use all features!</b>"""
 
     SOURCE_TXT = """<b>
 NOTE:
