@@ -1043,7 +1043,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             media=InputMediaAnimation(
                 media="https://cdn.jsdelivr.net/gh/Jisshubot/JISSHU_BOTS/Group_20240921_202540_0001.gif",
                 caption=script.GROUP_TEXT.format(temp.B_LINK),
-                parse_mode="html"
+                parse_mode=enums.ParseMode.HTML
             ),
             reply_markup=reply_markup
         )
