@@ -1042,7 +1042,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.message.chat.id,
             message_id=query.message.id,
             media=InputMediaAnimation(
-                media="https://cdn.jsdelivr.net/gh/Jisshubot/JISSHU_BOTS/Group_20240921_202540_0001.gif",
+                media="https://envs.sh/V_w.mp4",
                 caption=script.GROUP_TEXT.format(temp.B_LINK),
                 parse_mode=enums.ParseMode.HTML
             ),
