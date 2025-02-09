@@ -328,7 +328,7 @@ User - {}"""
 ------------File Caption------------
 /set_caption - Set custom file caption 
 ------------IMDb Template------------
-/set_template - Set IMDb template <a href="https://t.me/Jisshu_developer/8">Example</a>
+/set_template - Set IMDb template <a href="https://t.me/CharlieMoviesUpdate/1540">Example</a>
 ------------Set Tutorial------------
 /set_tutorial - Set verification tutorial 
 ------------Log Channel------------
