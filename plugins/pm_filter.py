@@ -1026,18 +1026,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML 
 	    )
-    elif query.data == "earn":
-        buttons = [[
+    elif query.data == "earn": 
+        try:
+          buttons = [[
             InlineKeyboardButton(
                 '⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ⇆', 
                 url=f'http://t.me/{temp.U_NAME}?startgroup=start'
             )
-        ], [
+          ], [
             InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='features'),
             InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/CharlieWatson1')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+          ]]
+          reply_markup = InlineKeyboardMarkup(buttons)
+          await client.edit_message_media(
             chat_id=query.message.chat.id,
             message_id=query.message.id,
             media=InputMediaAnimation(
@@ -1046,7 +1047,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode=enums.ParseMode.HTML
             ),
             reply_markup=reply_markup
-        )
+          ) 
+        except Exception as e:
+          await client.send_message(
+            chat_id=query.message.chat.id,
+            text=f"❌ An error occurred:\n<code>{e}</code>",
+            parse_mode=enums.ParseMode.HTML
+	  )
    
     elif query.data == "telegraph":
         buttons = [[
