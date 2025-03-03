@@ -3,20 +3,11 @@
 from utils import temp
 from utils import get_poster
 from info import POST_CHANNELS
-from googletrans import Translator
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 translator = Translator()
 
-async def get_hindi(plot):
-    try:
-        translated = translator.translate(plot, dest='hi')
-        return translated.text
-    except Exception as e:
-        print(f"Translation Error: {e}")
-        return plot
-        
 @Client.on_message(filters.command('getfile'))
 async def getfile(client, message):
     try:
@@ -30,12 +21,7 @@ async def getfile(client, message):
             return await message.reply_text(f"No results found for {file_name} on IMDB.")
 
         poster = movie_details.get('poster', None)
-        movie_title = movie_details.get('title', 'N/A')
-        rating = movie_details.get('rating', 'N/A')
-        genres = movie_details.get('genres', 'N/A')
-        plot = movie_details.get('plot', 'N/A')
-        year = movie_details.get('year', 'N/A')
-        hindi_plot = await get_hindi(plot)
+        movie_title = movie_details.get('title', 'N/A')        
         
         custom_link = f"https://t.me/{temp.U_NAME}?start=getfile-{file_name.replace(' ', '-').lower()}"
         safari_markup = InlineKeyboardMarkup([
@@ -50,11 +36,7 @@ async def getfile(client, message):
             await message.reply_photo(
                 poster,
                 caption=(
-                    f"<b>🔖Title: {movie_title}</b>\n"
-                    f"<b>🎬 Genres: {genres}</b>\n"
-                    f"<b>⭐️ Rating: {rating}/10</b>\n"
-                    f"<b>📆 Year: {year}</b>\n\n"
-                    f"📕 Story: {hindi_plot}"
+                    f"<b>🔖Title: {movie_title}</b>\n"   
                 ),
                 reply_markup=safari_markup,
                 parse_mode=enums.ParseMode.HTML,
@@ -65,10 +47,6 @@ async def getfile(client, message):
             await message.reply_text(
                 (
                     f"<b>🔖Title: {movie_title}</b>\n"
-                    f"<b>🎬 Genres: {genres}</b>\n"
-                    f"<b>⭐️ Rating: {rating}/10</b>\n"
-                    f"<b>📆 Year: {year}</b>\n\n"
-                    f"📕 Story: {hindi_plot}"
                 ),
                 reply_markup=safari_markup,
                 parse_mode=enums.ParseMode.HTML,
@@ -89,13 +67,7 @@ async def post_to_channels(client, callback_query):
             return await callback_query.message.reply_text(f"No results found for {file_name} on IMDB.")
         
         poster = movie_details.get('poster', None)
-        movie_title = movie_details.get('title', 'N/A')
-        rating = movie_details.get('rating', 'N/A')
-        genres = movie_details.get('genres', 'N/A')
-        plot = movie_details.get('plot', 'N/A')
-        year = movie_details.get('year', 'N/A')
-        hindi_plot = await get_hindi(plot)
-        
+       
         custom_link = f"https://t.me/{temp.U_NAME}?start=getfile-{file_name.replace(' ', '-').lower()}"
         reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("Get File 📁", url=custom_link)
@@ -108,10 +80,6 @@ async def post_to_channels(client, callback_query):
                         photo=poster,
                         caption=(
                             f"<b>🔖Title: {movie_title}</b>\n"
-                            f"<b>🎬 Genres: {genres}</b>\n"
-                            f"<b>⭐️ Rating: {rating}/10</b>\n"
-                            f"<b>📆 Year: {year}</b>\n\n"
-                            f"📕 Story: {hindi_plot}"
                         ),
                         reply_markup=reply_markup,
                         parse_mode=enums.ParseMode.HTML
@@ -121,10 +89,6 @@ async def post_to_channels(client, callback_query):
                         chat_id=channel_id,
                         text=(
                             f"<b>🔖Title: {movie_title}</b>\n"
-                            f"<b>🎬 Genres: {genres}</b>\n"
-                            f"<b>⭐️ Rating: {rating}/10</b>\n"
-                            f"<b>📆 Year: {year}</b>\n\n"
-                            f"📕 Story: {hindi_plot}"
                         ),
                         reply_markup=reply_markup,
                         parse_mode=enums.ParseMode.HTML
