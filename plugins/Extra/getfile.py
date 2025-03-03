@@ -6,8 +6,6 @@ from info import POST_CHANNELS
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-translator = Translator()
-
 @Client.on_message(filters.command('getfile'))
 async def getfile(client, message):
     try:
